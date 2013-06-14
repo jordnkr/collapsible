@@ -1,0 +1,31 @@
+{
+	"name": "collapsible",
+	"version": "1.0.0",
+	"title": "Collapsible.js",
+	"description": "A plugin for creating easy to use collapsible menus of various types.",
+	"homepage": "http://jordnkr.github.io/collapsible",
+	"author": {
+		"name": "Jordan Ruedy",
+		"url": "https://github.com/jordnkr"
+	},
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://opensource.org/licenses/MIT"
+		}
+	],
+	"dependencies": {
+		"jquery": ">=1.4.2"
+	},
+	"keywords": [
+		"collapse",
+		"collapsible",
+		"menu",
+		"animation",
+		"effect",
+		"slider"
+	],
+	"docs": "https://github.com/jordnkr/collapsible",
+	"demo": "http://jordnkr.github.io/collapsible",
+	"bugs": "https://github.com/jordnkr/collapsible/issues"
+}
