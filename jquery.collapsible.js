@@ -61,8 +61,16 @@
 					/* FALLTHROUGH */
                 default:
 					if (effect === 'default-open') {
-						$($thisEven[settings.contentOpen]).children(':first-child').toggleClass(settings.arrowRclass + ' ' + settings.arrowDclass);
-						$($thisOdd[settings.contentOpen]).show();
+                        if (Array.isArray( settings.contentOpen )) {
+                            for (var i = 0; i < settings.contentOpen.length; i++) {
+                                var index = settings.contentOpen[i];
+                                $($thisEven[index]).children(':first-child').toggleClass(settings.arrowRclass + ' ' + settings.arrowDclass);
+                                $($thisOdd[index]).show();
+                            }
+                        } else {
+                            $($thisEven[settings.contentOpen]).children(':first-child').toggleClass(settings.arrowRclass + ' ' + settings.arrowDclass);
+                            $($thisOdd[settings.contentOpen]).show();
+                        }
 					}
                     $($thisEven).click(function() {
                         $(this).children(':first-child').toggleClass(settings.arrowRclass + ' ' + settings.arrowDclass);
