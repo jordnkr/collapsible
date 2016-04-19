@@ -1,6 +1,6 @@
 {
 	"name": "collapsible",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"title": "Collapsible.js",
 	"description": "A plugin for creating easy to use collapsible menus of various types.",
 	"homepage": "http://jordnkr.github.io/collapsible",
@@ -20,6 +20,7 @@
 	"keywords": [
 		"collapse",
 		"collapsible",
+		"accordion",
 		"menu",
 		"animation",
 		"effect",

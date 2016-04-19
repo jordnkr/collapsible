@@ -1,8 +1,8 @@
 /*!
-* Collapsible.js 1.0.0
+* Collapsible.js 1.0.1
 * https://github.com/jordnkr/collapsible
 *
-* Copyright 2013, Jordan Ruedy
+* Copyright 2016, Jordan Ruedy
 * This content is released under the MIT license
 * http://opensource.org/licenses/MIT
 */
@@ -39,45 +39,41 @@
 
             switch (effect) {
 				case 'accordion-open':
+                    $($thisEven[settings.contentOpen]).children(':first-child').toggleClass(settings.arrowRclass + ' ' + settings.arrowDclass);
+                    $($thisOdd[settings.contentOpen]).show().addClass(accord);
 					/* FALLTHROUGH */
                 case 'accordion':
-					if (effect === 'accordion-open') {
-						$($thisEven[settings.contentOpen]).children(':first-child').toggleClass(settings.arrowRclass + ' ' + settings.arrowDclass);
-						$($thisOdd[settings.contentOpen]).show().addClass(accord);
-					}
                     $($thisEven).click(function() {
                         if ($(this).next().attr('class') === accord) {
                             $(this).next().slideUp(settings.accordionUpSpeed).removeClass(accord);
                             $(this).children(':first-child').toggleClass(settings.arrowRclass + ' ' + settings.arrowDclass);
                         } else {
-                            $($thisEven).children().removeClass(settings.arrowDclass).addClass(settings.arrowRclass); 
+                            $($thisEven).children().removeClass(settings.arrowDclass).addClass(settings.arrowRclass);
                             $($thisOdd).slideUp(settings.accordionUpSpeed).removeClass(accord);
-                            $(this).next().slideDown(settings.accordionDownSpeed).addClass(accord); 
-                            $(this).children(':first-child').toggleClass(settings.arrowRclass + ' ' + settings.arrowDclass);              
+                            $(this).next().slideDown(settings.accordionDownSpeed).addClass(accord);
+                            $(this).children(':first-child').toggleClass(settings.arrowRclass + ' ' + settings.arrowDclass);
                         }
                     });
                     break;
 				case 'default-open':
+                    if (Array.isArray( settings.contentOpen )) {
+                        for (var i = 0; i < settings.contentOpen.length; i++) {
+                            var index = settings.contentOpen[i];
+                            $($thisEven[index]).children(':first-child').toggleClass(settings.arrowRclass + ' ' + settings.arrowDclass);
+                            $($thisOdd[index]).show();
+                        }
+                    } else {
+                        $($thisEven[settings.contentOpen]).children(':first-child').toggleClass(settings.arrowRclass + ' ' + settings.arrowDclass);
+                        $($thisOdd[settings.contentOpen]).show();
+                    }
 					/* FALLTHROUGH */
                 default:
-					if (effect === 'default-open') {
-                        if (Array.isArray( settings.contentOpen )) {
-                            for (var i = 0; i < settings.contentOpen.length; i++) {
-                                var index = settings.contentOpen[i];
-                                $($thisEven[index]).children(':first-child').toggleClass(settings.arrowRclass + ' ' + settings.arrowDclass);
-                                $($thisOdd[index]).show();
-                            }
-                        } else {
-                            $($thisEven[settings.contentOpen]).children(':first-child').toggleClass(settings.arrowRclass + ' ' + settings.arrowDclass);
-                            $($thisOdd[settings.contentOpen]).show();
-                        }
-					}
                     $($thisEven).click(function() {
                         $(this).children(':first-child').toggleClass(settings.arrowRclass + ' ' + settings.arrowDclass);
                         $(this).next().slideToggle(settings.collapseSpeed);
-                    });  
+                    });
 					break;
-            }      
+            }
         });
     };
 })(jQuery);
