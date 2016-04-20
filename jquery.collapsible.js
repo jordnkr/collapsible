@@ -1,5 +1,5 @@
 /*!
-* Collapsible.js 1.0.1
+* Collapsible.js 1.1.0
 * https://github.com/jordnkr/collapsible
 *
 * Copyright 2016, Jordan Ruedy
@@ -8,23 +8,20 @@
 */
 
 (function($, undefined) {
-    $.fn.collapsible = function(effect, options) {
+    $.fn.collapsible = function(options) {
 
         var defaults = {
+            accordion: false,
             accordionUpSpeed: 400,
             accordionDownSpeed: 400,
             collapseSpeed: 400,
-			contentOpen: 0,
+			contentOpen: null,
             arrowRclass: 'arrow-r',
             arrowDclass: 'arrow-d',
             animate: true
         };
 
-        if (typeof effect === "object") {
-            var settings = $.extend(defaults, effect);
-        } else {
-            var settings = $.extend(defaults, options);
-        }
+        var settings = $.extend(defaults, options);
 
         return this.each(function() {
             if (settings.animate === false) {
@@ -37,25 +34,24 @@
             var $thisOdd = $(this).children(':odd');
 			var accord = 'accordion-active';
 
-            switch (effect) {
-				case 'accordion-open':
+            if (settings.accordion === true) {
+                if (settings.contentOpen !== null) {
                     $($thisEven[settings.contentOpen]).children(':first-child').toggleClass(settings.arrowRclass + ' ' + settings.arrowDclass);
                     $($thisOdd[settings.contentOpen]).show().addClass(accord);
-					/* FALLTHROUGH */
-                case 'accordion':
-                    $($thisEven).click(function() {
-                        if ($(this).next().attr('class') === accord) {
-                            $(this).next().slideUp(settings.accordionUpSpeed).removeClass(accord);
-                            $(this).children(':first-child').toggleClass(settings.arrowRclass + ' ' + settings.arrowDclass);
-                        } else {
-                            $($thisEven).children().removeClass(settings.arrowDclass).addClass(settings.arrowRclass);
-                            $($thisOdd).slideUp(settings.accordionUpSpeed).removeClass(accord);
-                            $(this).next().slideDown(settings.accordionDownSpeed).addClass(accord);
-                            $(this).children(':first-child').toggleClass(settings.arrowRclass + ' ' + settings.arrowDclass);
-                        }
-                    });
-                    break;
-				case 'default-open':
+                }
+                $($thisEven).click(function() {
+                    if ($(this).next().attr('class') === accord) {
+                        $(this).next().slideUp(settings.accordionUpSpeed).removeClass(accord);
+                        $(this).children(':first-child').toggleClass(settings.arrowRclass + ' ' + settings.arrowDclass);
+                    } else {
+                        $($thisEven).children().removeClass(settings.arrowDclass).addClass(settings.arrowRclass);
+                        $($thisOdd).slideUp(settings.accordionUpSpeed).removeClass(accord);
+                        $(this).next().slideDown(settings.accordionDownSpeed).addClass(accord);
+                        $(this).children(':first-child').toggleClass(settings.arrowRclass + ' ' + settings.arrowDclass);
+                    }
+                });
+            } else {
+                if (settings.contentOpen !== null) {
                     if (Array.isArray( settings.contentOpen )) {
                         for (var i = 0; i < settings.contentOpen.length; i++) {
                             var index = settings.contentOpen[i];
@@ -66,13 +62,11 @@
                         $($thisEven[settings.contentOpen]).children(':first-child').toggleClass(settings.arrowRclass + ' ' + settings.arrowDclass);
                         $($thisOdd[settings.contentOpen]).show();
                     }
-					/* FALLTHROUGH */
-                default:
-                    $($thisEven).click(function() {
-                        $(this).children(':first-child').toggleClass(settings.arrowRclass + ' ' + settings.arrowDclass);
-                        $(this).next().slideToggle(settings.collapseSpeed);
-                    });
-					break;
+                }
+                $($thisEven).click(function() {
+                    $(this).children(':first-child').toggleClass(settings.arrowRclass + ' ' + settings.arrowDclass);
+                    $(this).next().slideToggle(settings.collapseSpeed);
+                });
             }
         });
     };
