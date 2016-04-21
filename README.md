@@ -1,9 +1,6 @@
 **Collapsible.js**  [![Bower](https://img.shields.io/badge/bower-v1.1.2-brightgreen.svg)](http://bower.io/search/?q=collapsible.js)
 ===================
 
-##Table of contents
-[TOC]
-
 ## What is it?
 Collapsible.js is a lightweight (~1.7kb min) jQuery plugin that was created with the intent to expand on the functionality of the accordion effect found in jQuery UI. Primarily, allow the menu to either be an accordion or expand any/all of the available panels at the same time.
 
