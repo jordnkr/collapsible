@@ -67,6 +67,7 @@
                     $(this).children(':first-child').toggleClass(settings.arrowRclass + ' ' + settings.arrowDclass);
                     $(this).next().slideToggle(settings.collapseSpeed);
                 });
+                if (!$($thisEven).hasClass("open")) $($thisEven).trigger("click");
             }
         });
     };
