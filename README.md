@@ -8,7 +8,7 @@ Collapsible.js is a lightweight (~1.7kb min) jQuery plugin that was created with
 * [Bower](http://bower.io/search/?q=collapsible.js): `bower install collapsible.js`.
 * [Download latest release](https://github.com/jordnkr/collapsible/releases)
 
-##What you need
+## What you need
 You'll need jQuery in your project, as well as a reference to the plugin:
 ```js
 <script type="text/javascript" src="jquery.collapsible.js"></script>
@@ -23,7 +23,7 @@ The menu styles can be customized however you would like after that. A styleshee
 
 ## Usage Examples
 
-###HTML
+## HTML
 
 For the plugin to function properly, you will need to have your HTML set up in a certain manner. An example of the setup:
 ```html
@@ -45,7 +45,7 @@ For the plugin to function properly, you will need to have your HTML set up in a
 * The `collapse-container` class can be named whatever you would like, just remember that it must have the CSS that was mentioned [above](#what-you-need) tied to it.
 * `<span class="arrow-r"></span>` is used when you would like a triangle (or something similar) in the heading that depicts whether the content is expanded or collapsed. You will need to set up a CSS class for this if you wish to use it. An example class is in the provided CSS stylesheet, otherwise you are welcome to write a custom one.
 
-###JavaScript
+## JavaScript
 The simplest way to initialize a collapsible menu:
 ```js
 $('#firstCollapseMenu').collapsible();
@@ -73,6 +73,18 @@ Explanation of each option:
 * `arrowRclass` - The CSS class name of the arrow that indicates a panel is closed.
 * `arrowDclass` - The CSS class name of the arrow that indicates a panel is open.
 * `animate` - `true` if the menu should have opening and closing animations. `false` if there shouldn't be animation, and instead the panels open and close immediately.
+
+## No Script
+To avoid some potential issues in browsers that do not have JavaScript enabled, adding the follow to your code will allow it to fail more gracefully.
+```js
+<noscript>
+	<style>
+		.collapse-container > :nth-child(even) {
+			display: block;
+		}
+	</style>
+</noscript>
+```
 
 ## License
 MIT license.

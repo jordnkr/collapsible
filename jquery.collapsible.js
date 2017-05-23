@@ -1,8 +1,8 @@
 /*!
-* Collapsible.js v1.1.2
+* Collapsible.js v1.1.3
 * https://github.com/jordnkr/collapsible
 *
-* Copyright 2016, Jordan Ruedy
+* Copyright 2017, Jordan Ruedy
 * This content is released under the MIT license
 * http://opensource.org/licenses/MIT
 */
