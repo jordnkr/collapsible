@@ -1,0 +1,35 @@
+{
+  "name": "collapsible.js",
+  "version": "1.1.4",
+  "description": "A jQuery plugin for creating easy to use collapsible and accordion menus",
+  "keywords": [
+    "jQuery",
+    "collapsible",
+    "collapse",
+    "accordion",
+    "plugin",
+    "menu",
+    "animation",
+    "effect",
+    "slider"
+  ],
+  "homepage": "https://github.com/jordnkr/collapsible",
+  "bugs": "https://github.com/jordnkr/collapsible/issues",
+  "repository": {
+    "url": "https://github.com/jordnkr/collapsible.git",
+    "type": "git"
+  },
+  "main": "jquery.collapsible.js",
+  "files": [
+    "collapsible.css",
+    "jquery.collapsible.js",
+    "jquery.collapsible.min.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "dependencies": {
+      "jquery": ">=1.4.2"
+  },
+  "author": "Jordan Ruedy",
+  "license": "MIT"
+}

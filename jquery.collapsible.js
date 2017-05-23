@@ -1,5 +1,5 @@
 /*!
-* Collapsible.js v1.1.3
+* Collapsible.js v1.1.4
 * https://github.com/jordnkr/collapsible
 *
 * Copyright 2017, Jordan Ruedy
