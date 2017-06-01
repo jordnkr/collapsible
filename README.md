@@ -8,20 +8,15 @@
 Collapsible.js is a lightweight (~1.7kb min) jQuery plugin that was created with the intent to expand on the functionality of the accordion effect found in jQuery UI. Primarily, allow the menu to either be an accordion or expand any/all of the available panels at the same time.
 
 ## Installation
-* [npm](https://www.npmjs.com/package/collapsible.js): `npm install collapsible.js`.
-* [Bower](http://bower.io/search/?q=collapsible.js): `bower install collapsible.js`.
+* [npm](https://www.npmjs.com/package/collapsible.js): `npm install collapsible.js`
+* [yarn](https://yarnpkg.com/en/package/collapsible.js): `yarn add collapsible.js`
+* [Bower](http://bower.io/search/?q=collapsible.js): `bower install collapsible.js`
 * [Download latest release](https://github.com/jordnkr/collapsible/releases)
 
 ## What you need
-You'll need jQuery in your project, as well as a reference to the plugin:
+You'll need jQuery in your project, as well as a script tag referencing the plugin:
 ```js
-<script type="text/javascript" src="jquery.collapsible.js"></script>
-```
-The only other thing you'll need so that the menu(s) display properly is the `display : none;` CSS property:
-```css
-.collapse-container>:nth-child(even) {
-	display : none;
-}
+<script src="jquery.collapsible.js"></script>
 ```
 The menu styles can be customized however you would like after that. A stylesheet is included to give a basic example of how they can be customized.
 
@@ -79,7 +74,7 @@ Explanation of each option:
 * `animate` - `true` if the menu should have opening and closing animations. `false` if there shouldn't be animation, and instead the panels open and close immediately.
 
 ## No Script
-To avoid some potential issues in browsers that do not have JavaScript enabled, adding the follow to your code will allow it to fail more gracefully.
+To avoid some potential issues in browsers that do not have JavaScript enabled, adding the follow to your code will allow it to fail more gracefully (the dropdowns will default to being open).
 ```js
 <noscript>
 	<style>

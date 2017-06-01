@@ -1,5 +1,5 @@
 /*!
-* Collapsible.js v1.1.5
+* Collapsible.js v1.2.0
 * https://github.com/jordnkr/collapsible
 *
 * Copyright 2017, Jordan Ruedy
@@ -33,6 +33,8 @@
             var $thisEven = $(this).children(':even');
             var $thisOdd = $(this).children(':odd');
 			var accord = 'accordion-active';
+
+            $(this).children(':nth-child(even)').css('display','none');
 
             if (settings.accordion === true) {
                 if (settings.contentOpen !== null) {

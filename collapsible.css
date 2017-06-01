@@ -34,7 +34,6 @@
 }
 .collapse-container>:nth-child(even) {
 	background-color: white;
-	display: none;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
